@@ -41,10 +41,10 @@ namespace D
                     }
                 }
             }
-            if(count%2 == 1)
+            if (count % 2 == 1)
             {
                 var result = str.ToCharArray();
-                for(int i = result.Length - 1; i > -1; i--)
+                for (int i = result.Length - 1; i > -1; i--)
                 {
                     Console.Write(result[i]);
                 }
