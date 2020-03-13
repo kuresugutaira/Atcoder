@@ -29,11 +29,11 @@ namespace D
                     }
                     else if(info[i][1] == "2" && count % 2 == 1)
                     {
-                        str = Sentou(str, info[i][2]);
+                        str = str.Insert(0, info[i][2]);
                     }
                     else if(info[i][1] == "1" && count % 2 == 0)
                     {
-                        str = Sentou(str, info[i][2]);
+                        str = str.Insert(0, info[i][2]);
                     }
                     else
                     {
@@ -43,33 +43,17 @@ namespace D
             }
             if(count%2 == 1)
             {
-                str = Hanntenn(str);
+                var result = str.ToCharArray();
+                for(int i = result.Length - 1; i > -1; i--)
+                {
+                    Console.Write(result[i]);
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine(str);
-            //Console.ReadKey();
-        }
-
-        static string Hanntenn(string str)
-        {
-            char[] mojis = str.ToCharArray();
-            int time2 = mojis.Length / 2;
-            for(int i = 0; i < time2; i++)
+            else
             {
-                var tmp = mojis[i];
-                mojis[i] = mojis[mojis.Length - i - 1];
-                mojis[mojis.Length - i - 1] = tmp;
+                Console.WriteLine(str);
             }
-            var st = new string(mojis);
-            return st;
-        }
-
-        static string Sentou(string str,string moji)
-        {
-            var mojis = new List<char>(str.ToCharArray());
-            var moj = moji.ToCharArray();
-            mojis.Insert(0, moj[0]);
-            var st = new string(mojis.ToArray());
-            return st;
         }
     }
 }
