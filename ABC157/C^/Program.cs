@@ -59,7 +59,7 @@ namespace C
             }
             if (flag == true) { result = new string(num); }
             Console.WriteLine(result);
-            //Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }
