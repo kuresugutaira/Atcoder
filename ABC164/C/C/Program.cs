@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace C
 {
@@ -6,7 +8,14 @@ namespace C
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var list = new List<string>();
+            var n = int.Parse(Console.ReadLine());
+            for(int i = 0; i < n; i++)
+            {
+                list.Add(Console.ReadLine());
+            }
+            IEnumerable<string> result = list.Distinct();
+            Console.WriteLine(result.Count());
         }
     }
 }
